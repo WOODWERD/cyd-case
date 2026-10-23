@@ -1,0 +1,43 @@
+site_name: WOODWERD CYD Case
+site_description: A printed split housing for the ESP32 Cheap Yellow Display (USB-C), shared by every WOODWERD CYD build.
+site_url: https://WOODWERD.github.io/cyd-case/
+repo_url: https://github.com/WOODWERD/cyd-case
+repo_name: cyd-case
+edit_uri: edit/main/docs/
+copyright: "© 2026 WOODWERD LLC · MIT"
+docs_dir: docs
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: green
+      toggle: { icon: material/brightness-4, name: Light mode }
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: green
+      toggle: { icon: material/brightness-7, name: Dark mode }
+  features:
+    - navigation.sections
+    - navigation.footer
+    - content.code.copy
+    - search.suggest
+  font:
+    text: Inter
+    code: JetBrains Mono
+nav:
+  - Home: index.md
+  - Build guide: BUILD.md
+  - Housing v2: housing-v2.md
+  - Changelog: changelog.md
+  - Notices & license: notices.md
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - toc:
+      permalink: true
+plugins:
+  - search

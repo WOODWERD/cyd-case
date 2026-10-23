@@ -1,0 +1,42 @@
+name: Docs site
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency: { group: pages, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install mkdocs-material
+      # the site reuses the repo-level files; repo-relative links become site-relative
+      - run: |
+          BLOB="https://github.com/${{ github.repository }}/blob/main"
+          TREE="https://github.com/${{ github.repository }}/tree/main"
+          cp README.md docs/index.md
+          sed -i -e 's|](docs/|](|g' -e 's|](housings/v2/README.md)|](housing-v2.md)|g' -e "s|](BOM.csv)|]($BLOB/BOM.csv)|g" \
+                 -e 's|](housings/v2/Fastener_Spec.pdf)|](Fastener_Spec.pdf)|g' -e 's|](THIRD_PARTY_NOTICES.md)|](notices.md)|g' -e 's|](LICENSE)|](notices.md#license)|g' docs/index.md
+          cp housings/v2/README.md docs/housing-v2.md
+          sed -i -e 's|](../../docs/BUILD.md)|](BUILD.md)|g' -e 's|](../../docs/|](|g' -e "s|](../../BOM.csv)|]($BLOB/BOM.csv)|g" docs/housing-v2.md
+          sed -i -e "s|](../BOM.csv)|]($BLOB/BOM.csv)|g" -e 's|](../housings/v2/Fastener_Spec.pdf)|](Fastener_Spec.pdf)|g' -e 's|](../housings/v2/README.md)|](housing-v2.md)|g' docs/BUILD.md
+          cp housings/v2/Fastener_Spec.pdf docs/Fastener_Spec.pdf
+          cp THIRD_PARTY_NOTICES.md docs/notices.md && printf '\n\n## License\n\n```\n' >> docs/notices.md && cat LICENSE >> docs/notices.md && printf '\n```\n' >> docs/notices.md
+          cp CHANGELOG.md docs/changelog.md
+      - run: mkdocs build --strict
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: "${{ steps.deployment.outputs.page_url }}" }
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
