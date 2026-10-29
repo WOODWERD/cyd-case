@@ -1,6 +1,6 @@
 # Build guide: parts, printing, inserts, assembly
 
-This guide covers housing **v2**. The steps are the same for every WOODWERD CYD firmware; only the flashing step differs, and each project's own docs cover that.
+This guide covers housings **v2** and **v3**. They share the hardware and the steps; where v3 differs, it says so. The steps are the same for every WOODWERD CYD firmware; only the flashing step differs, and each project's own docs cover that.
 
 Everything from ordering the parts to having the case on your desk. Nothing here needs soldering beyond a
 soldering iron used as a heat source for the inserts. Budget an evening: an hour of printing you
@@ -16,9 +16,9 @@ don't have to watch, twenty minutes at the bench.
 | 2 | 1 | USB-C cable, data | USB-C → USB-A recommended | Some boards lack CC resistors; C-to-C into a Mac's C port may not power |
 | 3 | 4 | **Flat-head screw** | **M3 × 14 mm**, 90° countersunk, hex socket, DIN 7991 / ISO 10642 | Length includes the head. Not M3 × 16. 2 mm hex key |
 | 4 | 4 | **Heat-set threaded insert** | **M3, brass, 4 mm long, OD 4.0–4.2 mm** | The "M3 × L4" kit size; Voron M3×5×4 also fits. Not the 5.7 mm ones |
-| 5 | 1 | Printed: **Base** | `CYD_Case_v2_Base.stl`, PETG, no supports | open side up |
-| 6 | 1 | Printed: **Lid** | `CYD_Case_v2_Lid.stl`, PETG, no supports | face down |
-| 7 | 1 | Printed: **Light pipe** | `CYD_Case_v2_LightPipe.stl`, **clear** filament, 100 % infill | flange down |
+| 5 | 1 | Printed: **Base** | `CYD_Case_v2_Base.stl` or `CYD_Case_v3_Base.stl`, PETG, no supports | open side up |
+| 6 | 1 | Printed: **Lid** | `CYD_Case_v2_Lid.stl` or `CYD_Case_v3_Lid.stl`, PETG, no supports | face down |
+| 7 | 1 | Printed: **Light pipe** | `CYD_Case_v2_LightPipe.stl` (v3's is the same part), **clear** filament, 100 % infill | flange down |
 | — | — | Tools | soldering iron (insert tip or clean conical), 2 mm hex key, 3D printer | |
 
 Same list as a spreadsheet: [`BOM.csv`](../BOM.csv). Fastener detail with a section
@@ -46,7 +46,7 @@ M3 (Ø3.0 thread, 5.5–6 mm head). M4 and M5 won't pass. The fastener sheet has
 
 ## 2 · Print
 
-Files in [`housings/v2/`](../housings/v2/README.md). STL for slicing, STEP if you want to change something.
+Files in [`housings/v2/`](../housings/v2/README.md) or [`housings/v3/`](../housings/v3/README.md). STL for slicing, STEP if you want to change something.
 
 | File | Orientation | Notes |
 |---|---|---|
@@ -56,6 +56,10 @@ Files in [`housings/v2/`](../housings/v2/README.md). STL for slicing, STEP if yo
 
 Settings that matter: 0.2 mm layers (0.16 for a nicer chamfer), 3–4 perimeters so the lip and groove
 are solid, PETG at your usual temperature, no supports on anything. Outer size 54.6 × 90.6 × 16.1 mm.
+
+**v3:** turn on elephant-foot compensation for the base. The RESET and BOOT buttons are cut free by
+0.6 mm slots that start on the bed, and a squashed first layer can bridge them. Check both buttons
+flex before you go on.
 
 **Print the base first and try a USB-C cable in it.** That's the only fit that matters. If the plug
 won't click home, sand the lead-in chamfer a little; if your printer runs fat and the lid is tight on
@@ -92,6 +96,9 @@ Flashing is easier with the board out of the case. Use your project's own instru
    way round. It should seat with no force; if it doesn't, something's under it.
 4. Flip it over and drive the **four M3 × 14 screws** from below, 2 mm hex, snug with the short arm
    of the key. It's plastic — stop when the head sits in the countersink.
+5. **v3:** slide in a microSD card if your firmware uses one. Push until it clicks; push again to
+   release it. Press RESET from below to restart the board; hold BOOT while pressing RESET for
+   download mode.
 
 ![Board in base](case_open_with_board.png)
 ![Underside](case_bottom.png)
@@ -101,5 +108,6 @@ Flashing is easier with the board out of the case. Use your project's own instru
 Go back to your project's getting-started guide. The light sensor works through the pipe; the RGB LED may show faintly through lighter filament.
 
 ## What's covered on purpose
-Micro-USB, the microSD slot, the RST/BOOT buttons and the JST headers are all inside. Housing v3 (in development) opens the
-microSD slot and adds printed RESET / BOOT buttons. Until then, the STEP files make small edits easy.
+On v2, micro-USB, the microSD slot, the RESET / BOOT buttons and the JST headers are all inside.
+[Housing v3](../housings/v3/README.md) opens the microSD slot and adds printed RESET and BOOT buttons.
+Micro-USB and the JST headers stay inside on both; the STEP files make small edits easy.

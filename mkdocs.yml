@@ -42,6 +42,7 @@ extra:
 nav:
   - Home: index.md
   - Build guide: BUILD.md
+  - Housing v3: housing-v3.md
   - Housing v2: housing-v2.md
   - Changelog: changelog.md
   - Notices & license: notices.md
