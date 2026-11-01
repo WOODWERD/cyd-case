@@ -1,5 +1,10 @@
 # Changelog
 
+## Docs — 2026-11-01
+- The docs site moves to WOODWERD Digital through the shared theme: the WOODWERD Toolkit strip with an All tools menu,
+  a product header with no brand mark, the mark in the footer only, ink primary buttons, and Inter and JetBrains Mono
+  bundled with the site instead of fetched from Google Fonts. The theme control now also follows the computer.
+
 ## Housing v3 — 2026-10-29
 - **Released.** Housing v2 plus a **microSD slot** on the long side (split tongue like the USB-C port, card stands
   about 2.5 mm proud when ejected) and printed **RESET / BOOT** flexure buttons in the base. Printed and test-fitted.
