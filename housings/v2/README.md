@@ -12,6 +12,8 @@ Fusion 360 by WOODWERD LLC; STL for printing, STEP if you want to modify it. Thi
 | `CYD_Case_v2_Lid.stl` | Lid — display window, insert bosses, USB-C tongue | 1 | face **down** on the bed, no supports |
 | `CYD_Case_v2_LightPipe.stl` | Light pipe for the LDR — Ø2.9 rod on a Ø5 flange | 1 | **clear** filament, flange down, 100 % infill |
 
+**Download the files:** [housing v2 on GitHub](https://github.com/WOODWERD/cyd-case/tree/main/housings/v2), STL for printing and STEP for editing.
+
 Outer size 54.6 × 90.6 × 16.1 mm. Wall 2.0 mm, 0.3 mm clearance per side around the board. Volumes:
 base 15.2 cm³, lid 5.4 cm³.
 

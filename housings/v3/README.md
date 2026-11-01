@@ -15,6 +15,8 @@ the parts list as a spreadsheet is [`BOM.csv`](../../BOM.csv).
 | `CYD_Case_v3_Lid.stl` | Lid — display window, insert bosses, USB-C and microSD tongues | 1 | face **down** on the bed, no supports |
 | `CYD_Case_v3_LightPipe.stl` | Light pipe for the light sensor — unchanged from v2 | 1 | **clear** filament, flange down, 100 % infill |
 
+**Download the files:** [housing v3 on GitHub](https://github.com/WOODWERD/cyd-case/tree/main/housings/v3), STL for printing and STEP for editing.
+
 Outer size 54.6 × 90.6 × 16.1 mm, the same as v2. STL for printing, STEP if you want to change something.
 
 ## What's new

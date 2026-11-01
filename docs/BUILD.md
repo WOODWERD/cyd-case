@@ -85,7 +85,7 @@ sit in the finished stack — the screw comes up from the base, through the boar
 
 ## 4 · Flash the board on the bench
 
-Flashing is easier with the board out of the case. Use your project's own instructions: [Flow Ctrl](https://github.com/WOODWERD/cyd-flow-ctrl), [Media Ctrl](https://github.com/WOODWERD/cyd-media-ctrl), or [ESP Ctrl](https://woodwerd.github.io/esp-ctrl/) for any image. Confirm the screen comes up before you close anything up. If the port doesn't show up, hold BOOT while plugging in.
+Flashing is easier with the board out of the case. Use your project's own instructions: [Flow Ctrl](https://woodwerd.github.io/cyd-flow-ctrl/) or [ESP Ctrl](https://woodwerd.github.io/esp-ctrl/) for any image. Confirm the screen comes up before you close anything up. If the port doesn't show up, hold BOOT while plugging in.
 
 ## 5 · Assemble
 

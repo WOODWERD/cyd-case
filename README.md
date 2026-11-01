@@ -11,22 +11,22 @@ A split, screw-together 3D-printed case for the ESP32-2432S028R "Cheap Yellow Di
 - A clear light pipe carries the board's light sensor through the lid.
 - STL for printing, STEP for editing.
 
-**Build one:** [Build guide](docs/BUILD.md) covers buying, printing, inserts and assembly. The parts list is [BOM.csv](BOM.csv).
+**Build one:** [Build guide](https://woodwerd.github.io/cyd-case/BUILD/) covers buying, printing, inserts and assembly. The parts list is [BOM.csv](BOM.csv).
 
 ## Which firmware fits
 
 | Project | Housing | Notes |
 |---|---|---|
-| [Flow Ctrl](https://github.com/WOODWERD/cyd-flow-ctrl): Wispr Flow push-to-talk button | v2 or v3 | Landscape, lies flat on the desk. |
-| [Media Ctrl](https://github.com/WOODWERD/cyd-media-ctrl): iPad media remote | v2 or v3 | Portrait. Lean it against something for now; a dedicated portrait stand is planned. |
+| [Flow Ctrl](https://woodwerd.github.io/cyd-flow-ctrl/): Wispr Flow push-to-talk button | v2 or v3 | Landscape, lies flat on the desk. |
+| Media Ctrl (in progress): iPad media remote | v2 or v3 | Portrait. Lean it against something for now; a dedicated portrait stand is planned. |
 | Any other CYD firmware for the USB-C board | v2 or v3 | Choose **v3** if your firmware uses a microSD card or you want RESET and BOOT on the outside. Both cover micro-USB and the JST headers. |
 
 ## Housings
 
 | Version | Status | What's different |
 |---|---|---|
-| [**v3**](housings/v3/README.md) | **Released**, printed and test-fitted | v2 plus a microSD slot and printed RESET / BOOT buttons. Same size and hardware. |
-| [**v2**](housings/v2/README.md) | **Released**, printed and test-fitted | USB-C only, light pipe. 54.6 × 90.6 × 16.1 mm. |
+| [**v3**](https://woodwerd.github.io/cyd-case/housing-v3/) | **Released**, printed and test-fitted | v2 plus a microSD slot and printed RESET / BOOT buttons. Same size and hardware. |
+| [**v2**](https://woodwerd.github.io/cyd-case/housing-v2/) | **Released**, printed and test-fitted | USB-C only, light pipe. 54.6 × 90.6 × 16.1 mm. |
 | v4 | In development | Longer body with a LiPo battery bay, USB-C charging and a slide switch. |
 | Portrait stand | Planned | A standing housing for Media Ctrl. |
 
