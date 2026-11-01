@@ -35,7 +35,7 @@ theme:
 extra_css:
   - assets/woodwerd/woodwerd.css
 extra:
-  purpose: 'Printed housings and parts lists for the 2.8" and 3.5" boards.'
+  purpose: 'Printed housings and parts lists for the 2.8" board.'
   version: Housing v3
   social:
     - icon: fontawesome/brands/github
